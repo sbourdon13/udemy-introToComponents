@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import AppHeader from "./components/Header.vue";
+import AppHeader from "./layout/Header.vue";
 import AppServers from "./components/ServersList.vue";
 import AppServerDetails from "./components/ServerDetails.vue";
-import AppFooter from "./components/Footer.vue";
+import AppFooter from "./layout/Footer.vue";
 
 export default {
   data() {

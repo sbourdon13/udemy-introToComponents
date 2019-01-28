@@ -1,19 +1,19 @@
 <template>
   <div class="col-xs-12 col-sm-6">
     <ul class="list-group">
-      <app-server-status
+      <app-server
         class="list-group-item"
         v-for="server in servers"
         :key="server.id"
-        :data="server"
+        :server="server"
         @click.native="serverSelected(server)"
-      ></app-server-status>
+      ></app-server>
     </ul>
   </div>
 </template>
 
 <script>
-import AppServerStatus from "./ServerStatus.vue";
+import AppServer from "./Server.vue";
 import { eventBus } from "../main";
 
 export default {
@@ -40,12 +40,13 @@ export default {
     };
   },
   methods: {
-    serverSelected(data) {
-      eventBus.$emit("server-selected", data);
+    serverSelected(server) {
+      // this method could be set in Server.vue instead
+      eventBus.$emit("server-selected", server);
     }
   },
   components: {
-    AppServerStatus
+    AppServer
   }
 };
 </script>
